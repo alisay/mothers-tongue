@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef  } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const divStyle = {
     // color: 'blue',
@@ -17,8 +17,23 @@ const containerStyle = {
 const InfiniteScroll = () => {
     const [postList, setPostList] = useState({
         list: [1]
-    }); 
-    const poem = ["one", "two", "three"]
+    });
+    const poem = [
+        "This will be hard to express in the language of my coloniser. I will fail.",
+        "I will try.",
+        [<em>Dhulanbaa </em>,`is the time of the Black wattle.`, <br/>,<em>Dhulanbaa </em>,"is the place of the Black wattle."],
+        "There is no time without the place, and no place without the time.",
+        "We do not mark each beat and swallow it whole. We are rhythm people.",
+        ["When you die, said",<em> Garruu, </em>,"you may be reborn not as person or animal. Not even as tree.", <br />, "You may, instead, be reborn as place."],
+        "This makes mining murder.",
+        "This also makes us strong.",
+        ["Those without rhythm may perturb it,",<em> yawu.</em>,<br/>,"But those without rhythm cannot break it.", <br/>,<br/>,<em>Gamil.</em>],
+        "Take solace, my people. Rest easy.",
+        "Wake early, my people. There is much to do.",
+        // "This will be difficult to express in the language of my coloniser. I will fail.",
+        // "I will try.",
+    ]
+
     const [page, setPage] = useState(1);
     const loader = useRef(null);
     const [counter, setCounter] = useState(2);
@@ -28,17 +43,17 @@ const InfiniteScroll = () => {
     }
 
     useEffect(() => {
-         var options = {
+        var options = {
             root: null,
             rootMargin: "20px",
             threshold: 1.0
-         };
+        };
         // initialize IntersectionObserver
         // and attaching to Load More div
-         const observer = new IntersectionObserver(handleObserver, options);
-         if (loader.current) {
+        const observer = new IntersectionObserver(handleObserver, options);
+        if (loader.current) {
             observer.observe(loader.current)
-         }
+        }
 
     }, []);
 
@@ -53,10 +68,10 @@ const InfiniteScroll = () => {
     }, [page])
 
     // here we handle what happens when user scrolls to Load More div
-   // in this case we just update page variable
+    // in this case we just update page variable
     const handleObserver = (entities) => {
         const target = entities[0];
-        if (target.isIntersecting) {   
+        if (target.isIntersecting) {
             setPage((page) => page + 1)
         }
     }
@@ -67,15 +82,14 @@ const InfiniteScroll = () => {
             {
                 postList.list.map((post, index) => {
                     return (<div key={index} className="post" style={divStyle}>
-                        <h2> {post }. </h2>
-                        <h3>{poem[index%3]}</h3>
+                        <h2> {post}.<br/>{poem[index % poem.length]}</h2>
                     </div>)
                 })
             }
-             {/* <!-- Add Ref to Load More div --> */}
+            {/* <!-- Add Ref to Load More div --> */}
             <div className="loading" ref={loader}>
-                    <h2>Load More</h2>
-           </div>
+                <h2>...</h2>
+            </div>
         </div>
     </div>)
 }
