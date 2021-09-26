@@ -38,9 +38,9 @@ const InfiniteScroll = () => {
     const loader = useRef(null);
     const [counter, setCounter] = useState(2);
 
-    function increment() {
-        setCounter(prevCounter => prevCounter + 1);
-    }
+    // function increment() {
+    //     setCounter(prevCounter => prevCounter + 1);
+    // }
 
     useEffect(() => {
         var options = {
@@ -57,14 +57,15 @@ const InfiniteScroll = () => {
 
     }, []);
 
-
+// eslint-disable-next-line
     useEffect(() => {
         // here we simulate adding new posts to List
-        increment()
+        setCounter(prevCounter => prevCounter + 1)
         const newList = postList.list.concat([counter]);
         setPostList({
             list: newList
         })
+        // eslint-disable-next-line
     }, [page])
 
     // here we handle what happens when user scrolls to Load More div
