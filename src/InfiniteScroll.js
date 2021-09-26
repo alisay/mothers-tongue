@@ -30,8 +30,17 @@ const InfiniteScroll = () => {
         ["Those without rhythm may perturb it,",<em> yawu.</em>,<br/>,"But those without rhythm cannot break it.", <br/>,<br/>,<em>Gamil.</em>],
         "Take solace, my people. Rest easy.",
         "Wake early, my people. There is much to do.",
-        // "This will be difficult to express in the language of my coloniser. I will fail.",
-        // "I will try.",
+        "This will be difficult to express in the language of my coloniser. I will fail.",
+        "I will try.",
+        [<em>Dhulanbaa </em>,`is the time of the Black wattle.`, <br/>,<em>Dhulanbaa </em>,"is the place of the Black wattle."],
+        "There is no time without the place, and no place without the time.",
+        "We do not mark each beat and swallow it whole. We are rhythm people.",
+        ["When you die, said",<em> Garruu, </em>,"you may be reborn not as person or animal. Not even as tree.", <br />, "You may, instead, be reborn as place."],
+        "This makes mining murder.",
+        "This also makes us strong.",
+        ["Those without rhythm may perturb it,",<em> yawu.</em>,<br/>,"But those without rhythm cannot break it.", <br/>,<br/>,<em>Gamil.</em>],
+        "Take solace, my people. Rest easy.",
+        "Wake early, my people. There is much to do.",
     ]
 
     const [page, setPage] = useState(1);
