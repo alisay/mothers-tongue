@@ -8,6 +8,8 @@ const divStyle = {
     // background: '#eee',
     marginTop: '15px',
     fontFamily: 'Roboto, sans-serif',
+    background: 'black',
+    color: 'white',
 };
 
 

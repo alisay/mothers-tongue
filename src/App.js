@@ -1,10 +1,30 @@
+import { isCompositeComponentWithType } from 'react-dom/test-utils';
 import './App.css';
 import InfiniteScroll from './InfiniteScroll';
 
 function App() {
-  return (
+
+  const arrowStyle = {
+    // border: '3px solid red',
+    position: 'fixed',
+    bottom: '10vh',
+    right: '10vh',
+    fontSize: '250%',
+    opacity: '1.0',
+    color: 'white',
+    cursor: 'pointer',
+  }
+
+  const scrollFunc = (event) =>{
+    window.scrollTo(0,document.body.scrollHeight);
+  }
+
+  const arrow = <div style={arrowStyle} onClick={scrollFunc}>↓</div>
+
+  return (<>
+      {arrow}
     <InfiniteScroll />
-  );
+  </>);
 }
 
 export default App;
