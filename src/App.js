@@ -18,7 +18,7 @@ function App() {
     window.scrollTo(0,document.body.scrollHeight);
   }
 
-  const arrow = <div style={arrowStyle} onClick={scrollFunc}>↓</div>
+  const arrow = <div style={arrowStyle} onClick={scrollFunc} onTouchEnd={scrollFunc}>↓</div>
 
   return (<div onKeyDown={scrollFunc}>
       {arrow}
