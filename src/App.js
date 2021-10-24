@@ -1,4 +1,3 @@
-import { isCompositeComponentWithType } from 'react-dom/test-utils';
 import './App.css';
 import InfiniteScroll from './InfiniteScroll';
 
@@ -15,7 +14,7 @@ function App() {
     cursor: 'pointer',
   }
 
-  const scrollFunc = (event) =>{
+  const scrollFunc = () =>{
     window.scrollTo(0,document.body.scrollHeight);
   }
 
