@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const divStyle = {
     // color: 'blue',
-    height: '250px',
+    height: '30vh',
     // textAlign: 'center',
     padding: '5px 10px',
     // background: '#eee',
-    marginTop: '15px'
+    marginTop: '15px',
+    fontFamily: 'Roboto, sans-serif',
 };
 
 
@@ -92,7 +93,7 @@ const InfiniteScroll = () => {
             {
                 postList.list.map((post, index) => {
                     return (<div key={index} className="post" style={divStyle}>
-                        <h2> {post}.<br/>{poem[index % poem.length]}</h2>
+                        <h2> {post}.<br/></h2><h2>{poem[index % poem.length]}</h2>
                     </div>)
                 })
             }
