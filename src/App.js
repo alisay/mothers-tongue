@@ -20,10 +20,10 @@ function App() {
 
   const arrow = <div style={arrowStyle} onClick={scrollFunc}>↓</div>
 
-  return (<>
+  return (<div onKeyDown={scrollFunc}>
       {arrow}
     <InfiniteScroll />
-  </>);
+  </div>);
 }
 
 export default App;
