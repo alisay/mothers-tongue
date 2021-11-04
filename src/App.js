@@ -16,10 +16,10 @@ function App() {
 
   const scrollFunc = () => {
     console.log("oh, you're trying to scroll")
-    setInterval(function(){
-      window.scrollBy(0,1);
-    },100);
-    // window.scrollTo(0,document.body.scrollHeight);
+    // setInterval(function(){
+    //   window.scrollBy(0,1);
+    // },100);
+    window.scrollTo(0,document.body.scrollHeight);
   }
 
   const arrow = <div style={arrowStyle} onClick={scrollFunc} onTouchEnd={scrollFunc}>↓</div>
