@@ -14,15 +14,18 @@ function App() {
     cursor: 'pointer',
   }
 
-  const scrollFunc = () =>{
+  const scrollFunc = () => {
     console.log("oh, you're trying to scroll")
-    window.scrollTo(0,document.body.scrollHeight);
+    setInterval(function(){
+      window.scrollBy(0,1);
+    },100);
+    // window.scrollTo(0,document.body.scrollHeight);
   }
 
   const arrow = <div style={arrowStyle} onClick={scrollFunc} onTouchEnd={scrollFunc}>↓</div>
 
   return (<div onKeyDown={scrollFunc}>
-      {arrow}
+    {arrow}
     <InfiniteScroll />
   </div>);
 }
