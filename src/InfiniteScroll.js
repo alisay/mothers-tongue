@@ -1,4 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
+import {
+    createTheme,
+    responsiveFontSizes,
+    ThemeProvider,
+  } from '@mui/material/styles';
+  import Typography from '@mui/material/Typography';
+  
+  let theme = createTheme();
+  theme = responsiveFontSizes(theme);
+  
 
 const divStyle = {
     // color: 'blue',
@@ -11,6 +21,19 @@ const divStyle = {
     background: 'black',
     color: 'white',
 };
+
+const div2Style = {
+    // color: 'blue',
+    height: '10vh',
+    // textAlign: 'center',
+    padding: '5px 10px',
+    // background: '#eee',
+    marginTop: '15px',
+    fontFamily: 'Roboto, sans-serif',
+    background: 'black',
+    color: 'white',
+};
+
 
 
 const containerStyle = {
@@ -93,11 +116,15 @@ const InfiniteScroll = () => {
 
 
     return (<div className="container" style={containerStyle}>
+              <ThemeProvider theme={theme}>
         <div className="post-list">
+            <div style={div2Style}>
+                <Typography variant="h4"><em>Dhulanbaa</em></Typography>
+            </div>
             {
                 postList.list.map((post, index) => {
                     return (<div key={index} className="post" style={divStyle}>
-                        <h2> {post}.<br/></h2><h2>{poem[index % poem.length]}</h2>
+                        <Typography variant="h4"> {post}.<br/></Typography><Typography variant="h4">{poem[index % poem.length]}</Typography>
                     </div>)
                 })
             }
@@ -106,6 +133,7 @@ const InfiniteScroll = () => {
                 <h2>...</h2>
             </div>
         </div>
+        </ThemeProvider>
     </div>)
 }
 
